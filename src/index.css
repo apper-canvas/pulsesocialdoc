@@ -2,6 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .text-foreground {
+    @apply text-gray-900;
+  }
+  
+  .text-muted {
+    @apply text-gray-600;
+  }
+  
+  .text-muted-foreground {
+    @apply text-gray-400;
+  }
+  
+  .text-accent-foreground {
+    @apply text-gray-50;
+  }
+}
+
 @import 'react-toastify/dist/ReactToastify.css';
 
 @layer base {
