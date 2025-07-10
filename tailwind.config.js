@@ -6,7 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
+colors: {
+        border: "#E5E7EB",
         primary: "#8B5CF6",
         secondary: "#EC4899",
         accent: "#F59E0B",
