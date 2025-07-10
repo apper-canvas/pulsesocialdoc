@@ -20,8 +20,8 @@ const NavigationBar = ({ className, ...props }) => {
         className
       )}
       {...props}
-    >
-      <div className="max-w-md mx-auto px-4 py-2">
+>
+      <div className="max-w-md mx-auto px-2 sm:px-4 py-2">
         <div className="flex items-center justify-around">
           {navItems.map((item) => (
             <NavLink
@@ -39,21 +39,21 @@ const NavigationBar = ({ className, ...props }) => {
                   <motion.div
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
-                    className={cn(
-                      "p-2 rounded-xl transition-all duration-200",
+className={cn(
+                      "p-2 sm:p-3 rounded-xl transition-all duration-200",
                       isActive ? "bg-primary/10" : "hover:bg-gray-100"
                     )}
                   >
                     <ApperIcon
                       name={item.icon}
-                      size={24}
+size={20}
                       className={cn(
                         "transition-colors duration-200",
                         isActive ? "text-primary" : "text-gray-500"
                       )}
                     />
                   </motion.div>
-                  <span className="text-xs font-medium mt-1 block">
+<span className="text-xs font-medium mt-1 block truncate">
                     {item.label}
                   </span>
                 </>

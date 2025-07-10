@@ -102,10 +102,10 @@ const CommentThread = ({
   const topLevelComments = comments.filter(comment => !comment.parentId);
   const getReplies = (parentId) => comments.filter(comment => comment.parentId === parentId);
 
-  return (
-    <div className={cn("space-y-4", className)} {...props}>
+return (
+    <div className={cn("space-y-3 sm:space-y-4", className)} {...props}>
       {/* Comments List */}
-      <div className="space-y-4">
+      <div className="space-y-3 sm:space-y-4">
         {topLevelComments.length > 0 ? (
           topLevelComments.map(comment => (
             <div key={comment.id}>
@@ -130,14 +130,14 @@ const CommentThread = ({
             size="sm"
             fallback={currentUser?.displayName?.[0]?.toUpperCase()}
           />
-          <div className="flex-1">
-            <div className="flex space-x-2">
+<div className="flex-1">
+            <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
               <input
                 type="text"
                 value={newComment}
-                onChange={(e) => setNewComment(e.target.value)}
+onChange={(e) => setNewComment(e.target.value)}
                 placeholder={replyingTo ? "Write a reply..." : "Write a comment..."}
-                className="flex-1 px-4 py-2 rounded-full border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all duration-200"
+                className="flex-1 px-4 py-2 rounded-full border-2 border-gray-200 focus:border-primary focus:ring-4 focus:ring-primary/20 outline-none transition-all duration-200 text-sm sm:text-base"
               />
               <Button
                 type="submit"

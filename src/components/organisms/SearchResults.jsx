@@ -214,17 +214,17 @@ const SearchResults = ({
     );
   };
 
-  const renderUserResults = () => (
-    <div className="space-y-4">
+const renderUserResults = () => (
+    <div className="space-y-3 sm:space-y-4">
       {results.map((user) => (
         <motion.div
           key={user.id}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow"
+          className="bg-white rounded-xl p-3 sm:p-4 shadow-sm hover:shadow-md transition-shadow"
         >
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
+          <div className="flex items-start sm:items-center justify-between flex-col sm:flex-row space-y-3 sm:space-y-0">
+            <div className="flex items-center space-x-3 w-full sm:w-auto min-w-0">
               <Avatar
                 src={user.avatar}
                 alt={user.displayName}
@@ -235,23 +235,23 @@ const SearchResults = ({
                 <h3 className="font-semibold text-gray-900 truncate">
                   {user.displayName}
                 </h3>
-                <p className="text-gray-600 text-sm">@{user.username}</p>
+                <p className="text-gray-600 text-sm truncate">@{user.username}</p>
                 {user.bio && (
-                  <p className="text-gray-700 text-sm mt-1 line-clamp-2">
+                  <p className="text-gray-700 text-sm mt-1 line-clamp-2 hidden sm:block">
                     {user.bio}
                   </p>
                 )}
-                <div className="flex items-center space-x-4 mt-2 text-sm text-gray-500">
+                <div className="flex items-center space-x-3 sm:space-x-4 mt-2 text-sm text-gray-500">
                   <span>{user.followers} followers</span>
                   <span>{user.posts} posts</span>
                 </div>
               </div>
-            </div>
+</div>
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => handleFollow(user.id)}
-              className="btn-primary text-sm px-4 py-2"
+              className="btn-primary text-sm px-4 py-2 w-full sm:w-auto"
             >
               Follow
             </motion.button>
@@ -295,19 +295,18 @@ const SearchResults = ({
     </div>
   );
 
-  return (
-    <div className={cn("space-y-6", className)} {...props}>
+return (
+    <div className={cn("space-y-4 sm:space-y-6", className)} {...props}>
       {/* Results Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-3 sm:space-y-0">
         <div>
-          <h2 className="text-xl font-bold text-gray-900">
+          <h2 className="text-lg sm:text-xl font-bold text-gray-900">
             {query ? `Results for "${query}"` : `All ${type}`}
           </h2>
           <p className="text-gray-600 text-sm">
             {results.length} {results.length === 1 ? "result" : "results"} found
           </p>
         </div>
-        
         {type === "posts" && (
           <div className="flex items-center space-x-2">
             <button

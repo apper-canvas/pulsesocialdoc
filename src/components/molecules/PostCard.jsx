@@ -40,8 +40,8 @@ const PostCard = ({
       animate={{ opacity: 1, y: 0 }}
       className={cn("bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200", className)}
       {...props}
-    >
-      <div className="p-6">
+>
+      <div className="p-4 sm:p-6">
         {/* Post Header */}
         <div className="flex items-center space-x-3 mb-4">
           <Avatar
@@ -69,9 +69,9 @@ const PostCard = ({
             {post.content}
           </p>
           
-          {/* Hashtags */}
+{/* Hashtags */}
           {post.hashtags && post.hashtags.length > 0 && (
-            <div className="flex flex-wrap gap-2 mb-3">
+            <div className="flex flex-wrap gap-1 sm:gap-2 mb-3">
               {post.hashtags.map((tag, index) => (
                 <Badge key={index} variant="primary" size="sm">
                   #{tag}
@@ -80,21 +80,21 @@ const PostCard = ({
             </div>
           )}
 
-          {/* Post Image */}
+{/* Post Image */}
           {post.imageUrl && (
-            <div className="rounded-xl overflow-hidden bg-gray-100 mb-4">
+            <div className="rounded-lg sm:rounded-xl overflow-hidden bg-gray-100 mb-4">
               <img
-                src={post.imageUrl}
+src={post.imageUrl}
                 alt="Post content"
-                className="w-full h-64 object-cover"
+                className="w-full h-48 sm:h-64 object-cover"
               />
             </div>
           )}
         </div>
 
-        {/* Post Actions */}
+{/* Post Actions */}
         <div className="flex items-center justify-between border-t pt-4">
-          <div className="flex items-center space-x-6">
+          <div className="flex items-center space-x-4 sm:space-x-6">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

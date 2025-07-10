@@ -106,8 +106,8 @@ const FeedContainer = ({ className, ...props }) => {
     );
   }
 
-  return (
-    <div className={cn("space-y-6", className)} {...props}>
+return (
+    <div className={cn("space-y-4 sm:space-y-6", className)} {...props}>
       {/* Pull to refresh indicator */}
       {refreshing && (
         <motion.div
@@ -123,7 +123,7 @@ const FeedContainer = ({ className, ...props }) => {
       )}
 
       {/* Posts List */}
-      <div className="space-y-6">
+      <div className="space-y-4 sm:space-y-6">
         {posts.map((post, index) => (
           <motion.div
             key={post.id}
@@ -141,8 +141,8 @@ const FeedContainer = ({ className, ...props }) => {
         ))}
       </div>
 
-      {/* Load More Button */}
-      <div className="text-center pt-6">
+{/* Load More Button */}
+      <div className="text-center pt-4 sm:pt-6">
         <button
           onClick={handleRefresh}
           className="text-primary hover:text-primary/80 transition-colors duration-200 font-medium"

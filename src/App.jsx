@@ -8,7 +8,7 @@ import Create from "@/components/pages/Create";
 import Profile from "@/components/pages/Profile";
 
 function App() {
-  return (
+return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

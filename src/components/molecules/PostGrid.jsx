@@ -17,10 +17,10 @@ const PostGrid = ({
     );
   }
 
-  return (
+return (
     <div
       className={cn(
-        "grid grid-cols-2 md:grid-cols-3 gap-1 md:gap-2",
+        "grid grid-cols-2 md:grid-cols-3 gap-2 sm:gap-3 md:gap-4",
         className
       )}
       {...props}
@@ -31,9 +31,9 @@ const PostGrid = ({
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: index * 0.1 }}
-          whileHover={{ scale: 1.05 }}
+whileHover={{ scale: 1.02 }}
           onClick={() => onPostClick && onPostClick(post)}
-          className="aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer relative group"
+          className="aspect-square bg-gray-100 rounded-lg sm:rounded-xl overflow-hidden cursor-pointer relative group"
         >
           {post.imageUrl ? (
             <img

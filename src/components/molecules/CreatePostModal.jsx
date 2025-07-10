@@ -75,17 +75,17 @@ const CreatePostModal = ({
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
+exit={{ opacity: 0, scale: 0.9, y: 20 }}
             className={cn(
-              "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden",
+              "bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-hidden mx-4 sm:mx-0",
               className
             )}
             onClick={(e) => e.stopPropagation()}
             {...props}
           >
-            {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b">
-              <h2 className="text-xl font-bold text-gray-900">Create Post</h2>
+{/* Header */}
+            <div className="flex items-center justify-between p-4 sm:p-6 border-b">
+              <h2 className="text-lg sm:text-xl font-bold text-gray-900">Create Post</h2>
               <Button
                 variant="ghost"
                 size="sm"
@@ -96,8 +96,8 @@ const CreatePostModal = ({
               </Button>
             </div>
 
-            {/* Content */}
-            <form onSubmit={handleSubmit} className="p-6 space-y-6">
+{/* Content */}
+            <form onSubmit={handleSubmit} className="p-4 sm:p-6 space-y-4 sm:space-y-6">
               <div className="flex items-start space-x-3">
                 <Avatar
                   src={currentUser?.avatar}

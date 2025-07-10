@@ -40,33 +40,33 @@ const Search = () => {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-30"
-      >
-        <div className="max-w-4xl mx-auto px-4 py-4">
+>
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <ApperIcon name="Search" size={20} className="text-white" />
             </div>
-            <h1 className="text-2xl font-bold gradient-text">Discover</h1>
+            <h1 className="text-xl sm:text-2xl font-bold gradient-text">Discover</h1>
           </div>
         </div>
       </motion.header>
 
       {/* Search Bar */}
-      <div className="max-w-4xl mx-auto px-4 py-6">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
         <SearchBar
           onSearch={handleSearch}
           placeholder="Search posts, users, or hashtags..."
           className="mb-6"
         />
 
-        {/* Search Tabs */}
-        <div className="flex items-center space-x-1 mb-6 bg-white rounded-xl p-1 shadow-sm">
+{/* Search Tabs */}
+        <div className="flex items-center space-x-1 mb-4 sm:mb-6 bg-white rounded-xl p-1 shadow-sm overflow-x-auto">
           {tabs.map((tab) => (
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={cn(
-                "flex items-center space-x-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200",
+className={cn(
+                "flex items-center space-x-2 px-3 sm:px-4 py-2 rounded-lg font-medium text-sm transition-all duration-200 whitespace-nowrap",
                 activeTab === tab.id
                   ? "bg-primary text-white shadow-sm"
                   : "text-gray-600 hover:bg-gray-50"

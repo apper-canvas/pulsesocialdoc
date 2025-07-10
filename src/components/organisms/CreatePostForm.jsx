@@ -89,10 +89,10 @@ const CreatePostForm = ({ className, ...props }) => {
       animate={{ opacity: 1, y: 0 }}
       className={cn("bg-white rounded-2xl shadow-sm", className)}
       {...props}
+{...props}
     >
-      <div className="p-6">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-gray-900">Create Post</h2>
+      <div className="p-4 sm:p-6">
+        <div className="flex items-center justify-between mb-4 sm:mb-6">
           <Button
             variant="ghost"
             size="sm"
@@ -103,7 +103,7 @@ const CreatePostForm = ({ className, ...props }) => {
           </Button>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+<form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
           <div className="flex items-start space-x-3">
             <Avatar
               src={currentUser.avatar}
@@ -131,10 +131,10 @@ const CreatePostForm = ({ className, ...props }) => {
           {/* Image Preview */}
           {imagePreview && (
             <div className="relative">
-              <img
+<img
                 src={imagePreview}
                 alt="Preview"
-                className="w-full h-64 object-cover rounded-xl"
+                className="w-full h-48 sm:h-64 object-cover rounded-xl"
               />
               <button
                 type="button"
@@ -154,9 +154,9 @@ const CreatePostForm = ({ className, ...props }) => {
             label="Hashtags"
           />
 
-          {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t">
-            <div className="flex items-center space-x-4">
+{/* Actions */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between space-y-3 sm:space-y-0 pt-4 border-t">
+            <div className="flex items-center space-x-3 sm:space-x-4 overflow-x-auto">
               <label className="flex items-center space-x-2 cursor-pointer text-primary hover:text-primary/80 transition-colors">
                 <ApperIcon name="Image" size={20} />
                 <span className="text-sm font-medium">Photo</span>
@@ -181,16 +181,21 @@ const CreatePostForm = ({ className, ...props }) => {
                 <ApperIcon name="MapPin" size={20} />
                 <span className="text-sm font-medium">Location</span>
               </button>
-            </div>
+</div>
 
-            <Button
+            <div className="flex items-center justify-between sm:justify-end space-x-3">
+              <span className="text-sm text-gray-500 sm:mr-3">
+                {content.length}/500
+              </span>
+              <Button
               type="submit"
               loading={isSubmitting}
               disabled={!content.trim() || isSubmitting}
               className="min-w-[100px]"
             >
-              {isSubmitting ? "Posting..." : "Post"}
-            </Button>
+{isSubmitting ? "Posting..." : "Post"}
+              </Button>
+            </div>
           </div>
         </form>
       </div>
