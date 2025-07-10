@@ -18,12 +18,21 @@ return (
         initial={{ x: -100 }}
         animate={{ x: 0 }}
         className={cn(
-          "hidden lg:block w-64 bg-white/80 backdrop-blur-md border-r border-gray-200 h-full",
+          "hidden lg:block w-full bg-white/80 backdrop-blur-md border-r border-gray-200 h-full",
           className
         )}
         {...props}
       >
         <div className="p-6">
+          {/* Logo */}
+          <div className="flex items-center space-x-3 mb-8">
+            <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center">
+              <ApperIcon name="Zap" size={24} className="text-white" />
+            </div>
+            <h1 className="text-2xl font-bold gradient-text">Pulse</h1>
+          </div>
+
+          {/* Navigation Items */}
           <div className="space-y-2">
             {navItems.map((item) => (
               <NavLink
