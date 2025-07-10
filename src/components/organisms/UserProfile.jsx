@@ -104,7 +104,7 @@ const UserProfile = ({
   ];
 
 return (
-    <div className={cn("space-y-4 sm:space-y-6", className)} {...props}>
+    <div className={cn("space-y-6 lg:space-y-8", className)} {...props}>
       {/* Profile Header */}
       <ProfileHeader
         user={user}

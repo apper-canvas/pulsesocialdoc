@@ -107,7 +107,7 @@ const FeedContainer = ({ className, ...props }) => {
   }
 
 return (
-    <div className={cn("space-y-4 sm:space-y-6", className)} {...props}>
+    <div className={cn("space-y-6 lg:space-y-8", className)} {...props}>
       {/* Pull to refresh indicator */}
       {refreshing && (
         <motion.div
@@ -122,8 +122,8 @@ return (
         </motion.div>
       )}
 
-      {/* Posts List */}
-      <div className="space-y-4 sm:space-y-6">
+{/* Posts List */}
+      <div className="space-y-6 lg:space-y-8">
         {posts.map((post, index) => (
           <motion.div
             key={post.id}

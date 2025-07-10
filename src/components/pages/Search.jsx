@@ -41,7 +41,7 @@ const Search = () => {
         animate={{ opacity: 1, y: 0 }}
         className="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-30"
 >
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center space-x-3">
             <div className="w-8 h-8 bg-gradient-to-br from-primary to-secondary rounded-lg flex items-center justify-center">
               <ApperIcon name="Search" size={20} className="text-white" />
@@ -51,8 +51,8 @@ const Search = () => {
         </div>
       </motion.header>
 
-      {/* Search Bar */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+{/* Search Bar */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg:py-8">
         <SearchBar
           onSearch={handleSearch}
           placeholder="Search posts, users, or hashtags..."

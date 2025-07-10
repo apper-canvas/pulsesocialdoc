@@ -38,10 +38,10 @@ const PostCard = ({
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      className={cn("bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200", className)}
+className={cn("bg-white rounded-2xl shadow-sm hover:shadow-md transition-all duration-200", className)}
       {...props}
->
-      <div className="p-4 sm:p-6">
+    >
+      <div className="p-4 sm:p-6 lg:p-8">
         {/* Post Header */}
         <div className="flex items-center space-x-3 mb-4">
           <Avatar
